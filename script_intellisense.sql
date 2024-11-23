@@ -21,7 +21,7 @@ create table usuarios (
 );
 
 create table crimes (
-  id_crime int8 primary key auto_increment,
+  id_crime int primary key auto_increment,
   especificacao varchar(255),
   qtd_casos int,
   ano int,

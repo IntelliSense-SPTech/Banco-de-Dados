@@ -7,13 +7,6 @@ create table tipo_usuario (
   descricao varchar(250)
 );
 
-create table localidades (
-  id_localidade int primary key auto_increment,
-  regiao varchar(40),
-  municipio varchar(40),
-  populacao float
-);
-
 create table usuarios (
   id_usuario int primary key auto_increment,
   cim char,
@@ -28,13 +21,12 @@ create table usuarios (
 );
 
 create table crimes (
-  id_crime int primary key auto_increment,
+  id_crime int8 primary key auto_increment,
   especificacao varchar(255),
   qtd_casos int,
   ano int,
   mes int,
-  fk_localidade int,
-  foreign key (fk_localidade) references localidades(id_localidade)
+  localidade varchar(55)
 );
 
 create table contatos (
@@ -58,3 +50,6 @@ create table avaliacoes (
   mensagem varchar(400),
   foreign key (fk_usuario) references usuarios(id_usuario)
 );
+
+select * from crimes;
+truncate table crimes;

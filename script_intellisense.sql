@@ -22,12 +22,6 @@ create table crimes (
   localidade varchar(55)
 );
 
-create table contatos (
-  id_contato int primary key auto_increment,
-  email varchar(250),
-  mensagem varchar(400)
-);
-
 create table relatos (
   id_relato int primary key auto_increment,
   fk_usuario int,
@@ -36,18 +30,14 @@ create table relatos (
   foreign key (fk_usuario) references usuarios(id_usuario)
 );
 
+CREATE TABLE Mensagem (
+idMensagem INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(250),
+email VARCHAR(250),
+telefone CHAR(11),
+mensagem VARCHAR(500)
+);
+
 select * from crimes;
 select * from usuarios;
-
-
-
-
-
-
-
-
-
-
-
-
-
+select * from mensagem;

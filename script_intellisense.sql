@@ -1,23 +1,16 @@
 create database intellisense;
 use intellisense;
 
-create table tipo_usuario (
-  id_tipo_usuario int primary key auto_increment,
-  categoria varchar(40),
-  descricao varchar(250)
-);
-
 create table usuarios (
   id_usuario int primary key auto_increment,
-  cim char,
+  cim char(9),
   nome varchar(40),
   cpf char(14),
   email varchar(250),
   senha varchar(40),
-  token char(4),
+  token char(6),
   telefone char(11),
-  fk_tipo_usuario integer,
-  foreign key (fk_tipo_usuario) references tipo_usuario(id_tipo_usuario)
+  tipo_usuario varchar(20)
 );
 
 create table crimes (
@@ -43,13 +36,18 @@ create table relatos (
   foreign key (fk_usuario) references usuarios(id_usuario)
 );
 
-create table avaliacoes (
-  id_avaliacao int primary key auto_increment,
-  fk_usuario int,
-  nota int,
-  mensagem varchar(400),
-  foreign key (fk_usuario) references usuarios(id_usuario)
-);
-
 select * from crimes;
-truncate table crimes;
+select * from usuarios;
+
+
+
+
+
+
+
+
+
+
+
+
+

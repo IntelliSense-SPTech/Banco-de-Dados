@@ -25,7 +25,7 @@ create table crimes (
 create table relatos (
   id_relato int primary key auto_increment,
   fk_usuario int,
-  descricao varchar(400),
+  descricao varchar(2500),
   data date,
   foreign key (fk_usuario) references usuarios(id_usuario)
 );
